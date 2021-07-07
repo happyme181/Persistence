@@ -5,10 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nneka.persistence.databinding.ShoppingItemBinding
 
-class ShoppingAdapter (val shoppingItems: List<ShoppingModel>)
-    : RecyclerView.Adapter<ShoppingAdapter.ViewHolder>() {
+class ShoppingAdapter (
+    val shoppingItems: List<ShoppingModel>,
+    ):RecyclerView.Adapter<ShoppingAdapter.ViewHolder>() {
 
-    class ViewHolder(val binding: ShoppingItemBinding)
+    inner class ViewHolder(val binding: ShoppingItemBinding)
         : RecyclerView.ViewHolder(binding.root){
 
         fun bind(shoppingItem: ShoppingModel) {
@@ -18,10 +19,6 @@ class ShoppingAdapter (val shoppingItems: List<ShoppingModel>)
         }
 
     }
-
-
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding: ShoppingItemBinding = ShoppingItemBinding.inflate(LayoutInflater.from(parent.context))
